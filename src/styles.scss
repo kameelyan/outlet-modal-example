@@ -1,1 +1,88 @@
-/* You can add global styles to this file, and also import other style files */
+$natural: #f9f9f9;
+
+.outlet-modal {
+  .wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 50;
+    background-color: rgba($natural, 0.5);
+    display: none;
+
+    .dialog {
+      position: fixed;
+      top: 0;
+      bottom: 0;
+      left: 0;
+      overflow: auto;
+      background-color: white;
+      box-shadow: 0 2px 60px 0 rgba(0, 0, 0, 0.1);
+      width: 586px;
+      transform: translateX(-100%);
+      overflow-y: auto;
+      overflow-x: hidden;
+
+      .close {
+        color: #9fa0a5;
+        float: right;
+        font-size: 1rem;
+        margin: 1.5rem 1.5rem 0 0;
+
+        &:hover {
+          color: #333333;
+        }
+      }
+
+      .content {
+        padding: 4rem;
+        height: 100%;
+      }
+    }
+  }
+
+  &.right {
+    .dialog {
+      right: 0;
+      left: auto;
+      transform: translateX(100%);
+      transition: width 0.4s ease-in-out;
+
+      .close {
+        float: left;
+        margin: 1.5rem 0 0 1.5rem;
+      }
+    }
+  }
+}
+
+.outlet-open {
+  overflow: hidden;
+
+  &.widgets {
+    .dialog {
+      width: 860px;
+    }
+  }
+}
+
+@media screen and (max-width: 586px) {
+  .kp-modal {
+    .wrapper {
+      .dialog {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 860px) {
+  .outlet-open {
+    &.widgets {
+      .dialog {
+        width: 100%;
+      }
+    }
+  }
+}

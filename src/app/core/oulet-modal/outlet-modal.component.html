@@ -1,0 +1,9 @@
+<div class="wrapper" [@display]="animationState">
+    <div class="dialog" [@slide]="animationState">
+        <button class="close" (click)="close()">&times;</button>
+        <div class="content">
+            <ng-content></ng-content>
+        </div>
+    </div>
+</div>
+
